@@ -23,7 +23,8 @@ const AddPatientForm = ({ form }) => {
           <Form.Item
             name="apellidoPaterno"
             label="Apellido Paterno"
-            rules={[{ required: true, message: 'Por favor, ingresa el apellido paterno.' }]}
+            rules={[{ required: true, message: 'Por favor, ingresa el apellido paterno.' },
+                { pattern: /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/, message: 'Solo se permiten letras.' }]}
           >
             {/* --- CAMBIO --- */}
             <Input placeholder="Ingresa el apellido paterno" />
@@ -33,7 +34,8 @@ const AddPatientForm = ({ form }) => {
           <Form.Item
             name="apellidoMaterno"
             label="Apellido Materno"
-            rules={[{ required: true, message: 'Por favor, ingresa el apellido materno.' }]}
+            rules={[{ required: true, message: 'Por favor, ingresa el apellido materno.' },
+                { pattern: /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/, message: 'Solo se permiten letras.' }]}
           >
             {/* --- CAMBIO --- */}
             <Input placeholder="Ingresa el apellido materno" />
