@@ -12,7 +12,8 @@ const AddPatientForm = ({ form }) => {
           <Form.Item
             name="nombre"
             label="Nombre(s)"
-            rules={[{ required: true, message: 'Por favor, ingresa el nombre.' }]}
+            rules={[{ required: true, message: 'Por favor, ingresa el nombre.' },
+                { pattern: /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/, message: 'Solo se permiten letras.' }]}
           >
             {/* --- CAMBIO --- */}
             <Input placeholder="Ingresa el/los nombre(s)" />
