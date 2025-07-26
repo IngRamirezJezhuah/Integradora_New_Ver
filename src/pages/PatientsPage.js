@@ -179,10 +179,10 @@ const PatientsPage = () => {
                   <Card
                     actions={[
                       <Tooltip title="Ver Detalles">
-                        <Button type="text" key="details" icon={<InfoCircleOutlined />} onClick={() => showUserDetails(user)} />
+                        <Button style={{ paddingRight:'3vw', paddingLeft:'3vw'}} type="text" key="details" icon={<InfoCircleOutlined />} onClick={() => showUserDetails(user)} />
                       </Tooltip>,
                       <Tooltip title="Dar de Baja">
-                        <Button type="text" danger key="delete" icon={<DeleteOutlined />} onClick={() => showDeleteConfirm(user)} />
+                        <Button style={{ paddingRight:'3vw', paddingLeft:'3vw'}} type="text" danger key="delete" icon={<DeleteOutlined />} onClick={() => showDeleteConfirm(user)} />
                       </Tooltip>,
                       
                     ]}
@@ -193,9 +193,9 @@ const PatientsPage = () => {
                       title={<p style={{fontSize: '1.4vw'}}>{user.nombre} {user.apellidoPaterno} {user.apellidoMaterno}</p>}
                       description={
                         <>
-                          <Text type="secondary" style={{fontSize:20}}>{user.correo}</Text>
+                          <Text type="secondary" style={{fontSize:'1vw'}}>{user.correo}</Text>
                           <br />
-                          <Tag color={user.status ? 'green' : 'volcano'} style={{margin:'1vh', padding:'.3vw'}}>
+                          <Tag color={user.status ? 'green' : 'volcano'} style={{margin:'1vh', padding:'.3vw', paddingLeft:'2vh', paddingRight: '2vh'}}>
                             {user.status ? 'ACTIVO' : 'INACTIVO'}
                           </Tag>
                         </>

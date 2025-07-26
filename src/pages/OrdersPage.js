@@ -177,16 +177,16 @@ const OrdersPage = () => {
         <>
           <Row gutter={[16, 24]} className='scale-up-ver-center'>
             {paginatedOrders.map(order => (
-              <Col xs={24} sm={12} md={8} key={order._id}>
+              <Col xs={24} sm={20} md={8} key={order._id}>
                 <Card
-                  title={<Space><ExperimentOutlined />{order._id.slice(-6).toUpperCase()}</Space>}
+                  title={<Space><ExperimentOutlined /><p style={{fontSize:'2vh', marginTop:'1.5vh'}}>{order._id.slice(-6).toUpperCase()}</p></Space>}
                   actions={[
-                    <Tooltip title="Editar Pedido"><Button type="text" icon={<EditOutlined />} key="edit" onClick={() => showEditModal(order)} /></Tooltip>,
-                    <Tooltip title="Ver Detalles"><Button type="text" icon={<FileTextOutlined />} key="details" onClick={() => showOrderDetails(order)} /></Tooltip>,
-                    <Tooltip title="Dar de Baja"><Button type="text" danger icon={<DeleteOutlined />} key="delete" onClick={() => handleDelete(order)}/></Tooltip>,
+                    <Tooltip title="Editar Pedido"><Button style={{ paddingRight:'3vw', paddingLeft:'3vw'}} type="text" icon={<EditOutlined />} key="edit" onClick={() => showEditModal(order)} /></Tooltip>,
+                    <Tooltip title="Ver Detalles"><Button style={{ paddingRight:'3vw', paddingLeft:'3vw'}} type="text" icon={<FileTextOutlined />} key="details" onClick={() => showOrderDetails(order)} /></Tooltip>,
+                    <Tooltip title="Dar de Baja"><Button style={{ paddingRight:'3vw', paddingLeft:'3vw'}} type="text" danger icon={<DeleteOutlined />} key="delete" onClick={() => handleDelete(order)}/></Tooltip>,
                   ]}
                 >
-                  <Text strong>{order.analisis[0]?.nombre || 'Análisis'}</Text><br/>
+                  <Text style={{fontSize:'2vh'}} strong>{order.analisis[0]?.nombre || 'Análisis'}</Text><br/>
                   <Text type="secondary">{<p style={{fontSize:'2vh'}}>{order.usuarioId?.nombre || ''} {order.usuarioId?.apellidoPaterno || ''}</p>}</Text>
                 </Card>
               </Col>
