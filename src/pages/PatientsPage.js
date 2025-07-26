@@ -149,7 +149,7 @@ const PatientsPage = () => {
   };
 
   return (
-    <div>
+    <div className='scale-up-tl'>
       <Row justify="space-between" align="middle" gutter={[16, 16]} style={{ marginBottom: '24px' }}>
         <Col xs={24} md="auto">
           <Title level={3} style={{ margin: 0 }}>Gestión de Pacientes</Title>
@@ -172,7 +172,7 @@ const PatientsPage = () => {
         <div style={{ textAlign: 'center', padding: '50px' }}><Spin size="large" /></div>
       ) : (
         <>
-          <Row gutter={[16, 24]}>
+          <Row gutter={[16, 24]} className='scale-up-ver-center'>
             {paginatedUsers.length > 0 ? (
               paginatedUsers.map(user => (
                 <Col xs={24} sm={12} lg={8} key={user._id}>
@@ -185,11 +185,9 @@ const PatientsPage = () => {
                         <Button type="text" danger key="delete" icon={<DeleteOutlined />} onClick={() => showDeleteConfirm(user)} />
                       </Tooltip>,
                       
-                      
-                      
                     ]}
                   >
-                    <Card.Meta
+                    <Card.Meta 
                       avatar={<Avatar style={{ backgroundColor: '#89c2f0',padding:'1vw' }} icon={<UserOutlined />} />}
                       //title={`${user.nombre} ${user.apellidoPaterno}`}
                       title={<p style={{fontSize: '1.4vw'}}>{user.nombre} {user.apellidoPaterno} {user.apellidoMaterno}</p>}

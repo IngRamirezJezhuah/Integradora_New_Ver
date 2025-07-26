@@ -152,7 +152,7 @@ const AnalysisPage = () => {
           </Space>
         </Col>
       </Row>
-      <Row gutter={24}>
+      <Row gutter={24} className='scale-up-ver-center'>
         <Col xs={24} md={10}>
           <Card title="Pruebas">
             {loading ? <div style={{ textAlign: 'center', padding: '50px' }}><Spin /></div> : (

@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, /*Navigate*/ } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/common/PrivateRoute';
 import { AdminRoute, PatientRoute } from './components/common/RoleBasedRoutes';
+import './animaciones.css'
 
 // Importa todas tus páginas
 import LoginPage from './pages/LoginPage';
@@ -48,6 +49,11 @@ function App() {
           />
           
           {/* Redirección por defecto */}
+
+          {/* ✅ Redirección de la raíz "/" */}
+          <Route path="/" element={<Navigate to="/login" />} />
+
+          {/* ✅ Página 404 solo para rutas no existentes */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </AuthProvider>

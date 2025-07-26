@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Row, Col, Card, Button, Input, Tabs, Typography, Space, Empty, Spin, Tooltip, Modal, Form, Pagination, Dropdown, Menu } from 'antd';
-import { PlusOutlined, SearchOutlined, EditOutlined, DeleteOutlined, FileTextOutlined, ExperimentOutlined, SolutionOutlined } from '@ant-design/icons';
+import { Row, Col, Card, Button, Input, Tabs, Typography, Space, Spin, Tooltip, Modal, Form, Pagination, Dropdown, Menu } from 'antd';
+import { PlusOutlined, EditOutlined, DeleteOutlined, FileTextOutlined, ExperimentOutlined, SolutionOutlined } from '@ant-design/icons';
 import { getMuestras, getPedidos, takeSample, registerSampleResults, updateSample, updateSampleResults, deleteSample } from '../services/api';
 import TakeSampleForm from '../components/samples/TakeSampleForm';
 import RegisterResultsForm from '../components/samples/RegisterResultsForm';
@@ -213,7 +213,7 @@ const SamplesPage = () => {
 
       {loading ? <div style={{ textAlign: 'center', padding: '50px' }}><Spin size="large" /></div> : (
         <>
-          <Row gutter={[16, 24]}>
+          <Row gutter={[16, 24]} className='scale-up-ver-center'>
             {paginatedSamples.map(sample => {
               const isEnProceso = sample.status === true && sample.statusShowClient === false;
               const isConResultados = sample.status === true && sample.statusShowClient === true;

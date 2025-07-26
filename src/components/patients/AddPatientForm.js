@@ -1,14 +1,14 @@
 import React from 'react';
 import { Form, Input, Select, DatePicker, Row, Col } from 'antd';
-import dayjs from 'dayjs';
+
 
 const { Option } = Select;
 
 const AddPatientForm = ({ form }) => {
   return (
     <Form form={form} layout="vertical" name="addPatientForm">
-      <Row gutter={16}>
-        <Col xs={24} md={12}>
+      <Row gutter={30}>
+        <Col xs={24} md={24}>
           <Form.Item
             name="nombre"
             label="Nombre(s)"
@@ -18,7 +18,7 @@ const AddPatientForm = ({ form }) => {
             <Input placeholder="Ingresa el/los nombre(s)" />
           </Form.Item>
         </Col>
-        <Col xs={24} md={12}>
+        <Col xs={24} md={44}>
           <Form.Item
             name="apellidoPaterno"
             label="Apellido Paterno"
@@ -28,7 +28,7 @@ const AddPatientForm = ({ form }) => {
             <Input placeholder="Ingresa el apellido paterno" />
           </Form.Item>
         </Col>
-        <Col xs={24} md={12}>
+        <Col xs={30} md={24}>
           <Form.Item
             name="apellidoMaterno"
             label="Apellido Materno"
@@ -38,7 +38,7 @@ const AddPatientForm = ({ form }) => {
             <Input placeholder="Ingresa el apellido materno" />
           </Form.Item>
         </Col>
-        <Col xs={24} md={12}>
+        <Col xs={30} md={24}>
           <Form.Item
             name="correo"
             label="Correo Electrónico"
@@ -48,7 +48,7 @@ const AddPatientForm = ({ form }) => {
             <Input placeholder="usuario@dominio.com" />
           </Form.Item>
         </Col>
-        <Col xs={24} md={12}>
+        <Col xs={30} md={12}>
           <Form.Item
             name="fechaNacimiento"
             label="Fecha de Nacimiento"
@@ -57,7 +57,7 @@ const AddPatientForm = ({ form }) => {
             <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" placeholder="Selecciona una fecha" />
           </Form.Item>
         </Col>
-        <Col xs={24} md={12}>
+        <Col xs={30} md={12}>
           <Form.Item
             name="rol"
             label="Rol de Usuario"
